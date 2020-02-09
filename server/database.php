@@ -10,10 +10,10 @@
 
  // sql to create table if already created we can comment it out
  $sql = "CREATE TABLE IF NOT EXISTS StudentRecords (
- studentNumber VARCHAR(300) PRIMARY KEY,
- firstName VARCHAR(30) NOT NULL,
- lastName VARCHAR(300) NOT NULL,
- major VARCHAR(50) NOT NULL
+ StudentNumber VARCHAR(300) PRIMARY KEY,
+ FirstName VARCHAR(30) NOT NULL,
+ LastName VARCHAR(300) NOT NULL,
+ Major VARCHAR(50) NOT NULL
  )";
 
  if ($conn->query($sql) === TRUE) {

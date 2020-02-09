@@ -63,7 +63,7 @@
                         <button class="button is-dark close">
                             Cancel
                         </button>
-                        <button class="button is-success" type="submit">
+                        <button class="button is-success" name="submit" type="submit">
                             Submit
                         </button>
                  </form>
