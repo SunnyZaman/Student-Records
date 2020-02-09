@@ -1,5 +1,5 @@
 <?php
-    include "connection.php";
+    // include "connection.php";
  // Create database, we comment this out if it already exists
  $sql = "CREATE DATABASE IF NOT EXISTS StudentDB";
  if ($conn->query($sql) === TRUE) {
