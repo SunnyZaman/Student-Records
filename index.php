@@ -1,6 +1,8 @@
 <?php
-    include "database.php";
-    include "fetch.php";
+    include "server/connection.php";
+    include "server/database.php";
+    include "server/fetch.php";
+    include "server/insert.php";
 ?>
 <!DOCTYPE html>
 <html>
