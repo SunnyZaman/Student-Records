@@ -16,8 +16,27 @@
 <body>
     
     <div class="container">
-        <h1 class="title m-t10">Student Records</h1>
-        
+        <h1 class="title m-t10">Ryerson's Student Records</h1>
+        <!-- Table -->
+        <table class="table">
+  <thead>
+    <tr>
+    <th>Student Number</th> <!-- Primary key -->
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Major</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>test</td>
+      <td>test</td>
+      <td>test</td>
+      <td>test</td>
+    </tr>
+  </tbody>
+</table>
+
     </div>
 </body>
 
