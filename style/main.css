@@ -1,9 +1,12 @@
-.label{
-    color:#ffffff;
-}
-.table{
-    width: 100%;
-}
+
 .m-t10{
     margin-top:10px;
+}
+i{
+    cursor: pointer;
+    color:#8a1104;
+}
+i:hover{
+    color:#363535;
+    transform: scale(1.5);
 }
