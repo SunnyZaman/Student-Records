@@ -13,7 +13,7 @@
  StudentNumber VARCHAR(300) PRIMARY KEY,
  FirstName VARCHAR(30) NOT NULL,
  LastName VARCHAR(300) NOT NULL,
- Major VARCHAR(50) NOT NULL
+ Program VARCHAR(50) NOT NULL
  )";
 
  if ($conn->query($sql) === TRUE) {
