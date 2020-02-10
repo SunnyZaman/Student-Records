@@ -1,6 +1,9 @@
 <?php
+    include "connection.php";
     if(isset($_POST['submit'])){
-        $insert ="INSERT INTO Rankings(StudentNumber, FirstName, LastName, Major) VALUES('".$_POST['record']."')";
+        $values  =  "'" . implode("', '", $_POST['record']) . "'";
+        $insert ="INSERT INTO StudentRecords(StudentNumber, FirstName, LastName, Major) VALUES({$values})";
         $conn->query($insert);
+        header('location: ../index.php'); //redirect
     }
 ?>
