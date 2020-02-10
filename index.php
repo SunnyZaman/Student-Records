@@ -60,11 +60,11 @@
                                 <input class="input" name="record[lastName]" type="text">
                             </div>
                         </div>
-                        <!-- Major input -->
+                        <!-- Program input -->
                         <div class="field">
-                            <label class="label">Major:</label>
+                            <label class="label">Program:</label>
                             <div class="control">
-                                <input class="input" name="record[major]" type="text">
+                                <input class="input" name="record[program]" type="text">
                             </div>
                         </div>
                         <button class="button is-dark close" type="reset">
@@ -85,7 +85,7 @@
                 <th>Student Number</th> <!-- Primary key -->
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Major</th>
+                <th>Program</th>
                 <th>Delete</th>
                 </tr>
             </thead>
@@ -98,7 +98,7 @@
                                 <td>{$row['StudentNumber']}</td>
                                 <td>{$row['FirstName']}</td>
                                 <td>{$row['LastName']}</td>
-                                <td>{$row['Major']}</td>
+                                <td>{$row['Program']}</td>
                                 <td><i class='fas fa-trash-alt'
                                 onClick='deleteRecord({$row['StudentNumber']})'></i></td>
                             </tr>
