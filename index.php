@@ -13,12 +13,13 @@
     <meta name="google" content="notranslate" />
     <meta http-equiv="Content-Language" content="en_US" /> 
     <title>Student Records</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script defer src="js/modal.js"></script>
+    <script defer src="js/delete.js"></script>
     <script defer src="js/validation.js"></script>
 
 </head>
@@ -36,6 +37,7 @@
             <div class="modal-background"></div>
                 <div class="modal-content">
                 <!-- Form fields -->
+                <div class="box">
                 <form name="editForm" action="server/insert.php" method="POST">
                         <!-- Student Number input -->
                         <div class="field">
@@ -72,11 +74,12 @@
                             Submit
                         </button>
                  </form>
+                 </div>
                 </div>
                 <button class="modal-close"></button>
         </div>
         <!-- Table -->
-        <table class="table">
+        <table class="table is-striped is-fullwidth">
             <thead>
                 <tr>
                 <th>Student Number</th> <!-- Primary key -->
@@ -96,7 +99,8 @@
                                 <td>{$row['FirstName']}</td>
                                 <td>{$row['LastName']}</td>
                                 <td>{$row['Major']}</td>
-                                <td><i class='fas fa-trash-alt'></i></td>
+                                <td><i class='fas fa-trash-alt'
+                                onClick='deleteRecord({$row['StudentNumber']})'></i></td>
                             </tr>
                          ";
                         }
