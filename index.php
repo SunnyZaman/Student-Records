@@ -1,8 +1,9 @@
 <?php
     include "server/connection.php";
     include "server/database.php";
-    include "server/fetch.php";
     include "server/insert.php";
+    $sql = "SELECT * FROM StudentRecords";
+    $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,13 +14,15 @@
     <meta http-equiv="Content-Language" content="en_US" /> 
     <title>Student Records</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="modal.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="js/modal.js"></script>
+    <script defer src="js/validation.js"></script>
+
 </head>
 <body>
     
-    <div class="container">
+    <div class="container is-fluid">
         <h1 class="title m-t10">Ryerson's Student Records</h1>
         <!-- Add new record button -->
         <div class="field">
@@ -31,7 +34,7 @@
             <div class="modal-background"></div>
                 <div class="modal-content">
                 <!-- Form fields -->
-                <form name="editForm" action="insert.php" method="POST">
+                <form name="editForm" action="server/insert.php" method="POST">
                         <!-- Student Number input -->
                         <div class="field">
                             <label class="label">Student Number:</label>
@@ -63,7 +66,7 @@
                         <button class="button is-dark close">
                             Cancel
                         </button>
-                        <button class="button is-success" name="submit" type="submit">
+                        <button class="button is-success submit-button" name="submit" type="submit" disabled="disabled">
                             Submit
                         </button>
                  </form>
@@ -83,16 +86,18 @@
             <tbody>
             <?php 
                 if($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()){ ?>
-                        <tr>
-                            <td><?php echo $row['studentNumber'] ?></td>
-                            <td><?php echo $row['firstName'] ?></td>
-                            <td><?php echo $row['lastName'] ?></td>
-                            <td><?php echo $row['major'] ?></td>
-                        </tr>
-                    <?php 
+                    while($row = $result->fetch_assoc()){
+                            echo "
+                            <tr>
+                                <td>{$row['StudentNumber']}</td>
+                                <td>{$row['FirstName']}</td>
+                                <td>{$row['LastName']}</td>
+                                <td>{$row['Major']}</td>
+                            </tr>
+                         ";
+                        }
                     }
-                }?>
+                ?>
                 </tbody>
         </table>
     </div>
