@@ -15,6 +15,8 @@
     <title>Student Records</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script defer src="js/modal.js"></script>
     <script defer src="js/validation.js"></script>
@@ -63,7 +65,7 @@
                                 <input class="input" name="record[major]" type="text">
                             </div>
                         </div>
-                        <button class="button is-dark close">
+                        <button class="button is-dark close" type="reset">
                             Cancel
                         </button>
                         <button class="button is-success submit-button" name="submit" type="submit" disabled="disabled">
@@ -81,6 +83,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Major</th>
+                <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -93,6 +96,7 @@
                                 <td>{$row['FirstName']}</td>
                                 <td>{$row['LastName']}</td>
                                 <td>{$row['Major']}</td>
+                                <td><i class='fas fa-trash-alt'></i></td>
                             </tr>
                          ";
                         }
